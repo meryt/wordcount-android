@@ -3,9 +3,7 @@ package com.meryt.android.wordcount;
 import java.util.Calendar;
 import java.util.Date;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -46,11 +44,8 @@ public class MainActivity extends FragmentActivity {
         startActivity(intent);
     }
 
-    @SuppressLint("NewApi")
     private void setupActionBar() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            getActionBar().setDisplayHomeAsUpEnabled(false);
-        }
+        getActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
     private void setupCalendar() {
