@@ -1,6 +1,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
+        android:id="@+id/action_calendar"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_date"
+        android:title="@string/action_calendar"/>
+    
+    <item
+        android:id="@+id/action_projects"
+        android:showAsAction="ifRoom|withText"
+        android:icon="@drawable/ic_list"
+        android:title="@string/action_projects"/>
+    
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never"
