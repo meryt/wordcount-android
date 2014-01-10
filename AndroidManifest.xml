@@ -21,6 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.meryt.android.wordcount.ProjectsActivity"
+            android:label="@string/title_projects">
+        </activity>
     </application>
 
 </manifest>

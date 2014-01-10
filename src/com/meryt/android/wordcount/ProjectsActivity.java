@@ -1,21 +1,31 @@
 package com.meryt.android.wordcount;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
+
+import android.content.Intent;
 import android.view.MenuItem;
 
-public class CalendarActivity extends FragmentActivity {
+import android.support.v4.app.FragmentTransaction;
 
+import android.os.Bundle;
+
+import android.support.v4.app.FragmentActivity;
+
+
+public class ProjectsActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
-        setupActionBar();
 
-        setupCalendar();
+        setContentView(R.layout.activity_projects);
+
+        if (savedInstanceState == null) {
+            ProjectListFragment listFragment = new ProjectListFragment();
+            FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+            t.replace(R.id.projects_main, listFragment);
+            t.commit();
+
+        }
     }
 
     @Override
@@ -43,15 +53,4 @@ public class CalendarActivity extends FragmentActivity {
         }
     }
 
-    private void setupActionBar() {
-        getActionBar().setDisplayHomeAsUpEnabled(false);
-    }
-
-    private void setupCalendar() {
-        CalendarFragment calendar = new CalendarFragment();
-
-        FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-        t.replace(R.id.calendar_main, calendar);
-        t.commit();
-    }
 }
